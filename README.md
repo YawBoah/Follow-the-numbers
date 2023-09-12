@@ -75,6 +75,68 @@ In this code:
 
 This code will ensure that the dots and their corresponding number labels are displayed on the screen as expected.
 
+To draw the lines between the dots, you can add the following code at the end of your existing `draw()` function:
 
+```python
+    number += 1
+    for line in lines:
+        screen.draw.line((100, 0, 0), line[0], line[1])
+```
 
+Make sure to add this code below the existing code in your `draw()` function. This code iterates through the `lines` list and draws lines connecting the dots based on the coordinates stored in the list.
+
+With this addition, your game will draw lines between the dots when they are connected, enhancing the gameplay experience.
+
+Indeed, to run your Python program from the command line, follow these steps:
+
+1. Open the Command Prompt (Windows) or Terminal (macOS/Linux).
+
+2. Navigate to the directory where your Python script "numbers.py" is located. You can use the `cd` command to change directories. For example:
+
+   ```bash
+   cd path/to/your/directory
+   ```
+
+3. Once you're in the correct directory, you can run your Python script using the `pgzrun` command followed by the script name:
+
+   ```bash
+   pgzrun numbers.py
+   ```
+
+4. Press Enter to execute the command. Your game should start, and you'll see the game window appear.
+
+Now, you can test your game by interacting with it and checking if everything is functioning as expected. If you encounter any issues or have questions during the testing, feel free to ask for assistance.
+
+It seems you've reached a point where you should run your program to see the results. If you encounter any issues or errors, make sure to carefully review your code for any mistakes or typos.
+
+If you encounter specific errors or issues while running the program, please provide more details, and I'll be happy to assist you in troubleshooting and resolving them.
+
+To enable clicking on the dots, you need to add the `on_mouse_down(pos)` function to your code. Here's how you can implement it:
+
+```python
+# Existing code...
+
+def on_mouse_down(pos):
+    global next_dot
+    global lines
+
+    if next_dot < len(dots):
+        if dots[next_dot].collidepoint(pos):
+            if next_dot > 0:
+                lines.append([dots[next_dot - 1].pos, dots[next_dot].pos])
+            next_dot += 1
+    else:
+        lines.clear()
+        next_dot = 0
+
+# Rest of your code...
+```
+
+Explanation:
+
+- The `on_mouse_down(pos)` function is called when the mouse is clicked.
+- Inside this function, you check if `next_dot` (the dot that should be clicked next) is less than the total number of dots.
+- If `next_dot` is within the range of available dots, it checks if the mouse click position collides with the current dot using `dots[next_dot].collidepoint(pos)`.
+- If the click is on the correct dot, it appends the line's starting and ending points to the `lines` list and increments `next_dot`.
+- If `next_dot` exceeds the number of dots, it means the game is over, so it clears the `lines` list and resets `next_dot` to 0.
 
