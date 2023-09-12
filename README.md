@@ -111,6 +111,37 @@ It seems you've reached a point where you should run your program to see the res
 
 If you encounter specific errors or issues while running the program, please provide more details, and I'll be happy to assist you in troubleshooting and resolving them.
 
+To enable clicking on the dots, you need to add the `on_mouse_down(pos)` function to your code. Here's how you can implement it:
+
+```python
+# Existing code...
+
+def on_mouse_down(pos):
+    global next_dot
+    global lines
+
+    if next_dot < len(dots):
+        if dots[next_dot].collidepoint(pos):
+            if next_dot > 0:
+                lines.append([dots[next_dot - 1].pos, dots[next_dot].pos])
+            next_dot += 1
+    else:
+        lines.clear()
+        next_dot = 0
+
+# Rest of your code...
+```
+
+Explanation:
+
+- The `on_mouse_down(pos)` function is called when the mouse is clicked.
+- Inside this function, you check if `next_dot` (the dot that should be clicked next) is less than the total number of dots.
+- If `next_dot` is within the range of available dots, it checks if the mouse click position collides with the current dot using `dots[next_dot].collidepoint(pos)`.
+- If the click is on the correct dot, it appends the line's starting and ending points to the `lines` list and increments `next_dot`.
+- If `next_dot` exceeds the number of dots, it means the game is over, so it clears the `lines` list and resets `next_dot` to 0.
+
+With this addition, clicking on the dots should draw lines between them as you progress through the dots in the correct order. If you click on the wrong dot or exceed the expected order, the lines are cleared, and you start over.
+
 
 
 
