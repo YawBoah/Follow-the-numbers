@@ -52,6 +52,28 @@ for dot in range(0, 10):
 
 This code initializes the `dots` and `lines` lists, sets up the `next_dot` variable to track the next dot to be clicked, and then creates ten dots using a loop. The dots are positioned randomly within the specified range to ensure they appear at least 20 pixels away from the screen's edges. Each dot is added to the `dots` list, making it ready for use in your game.
 
+To draw the dots and their number labels on the screen using the `draw()` function, you can follow the instructions and add the code as described below. Place this code below the previous steps in your "numbers.py" file:
+
+```python
+def draw():
+    screen.fill("black")  # Fill the screen with a black background
+    number = 1
+
+    for dot in dots:
+        screen.draw.text(str(number), (dot.pos[0], dot.pos[1] + 12))  # Display the dot's number label
+        dot.draw()
+        number += 1
+```
+
+In this code:
+
+- The `screen.fill("black")` line fills the screen with a black background.
+- A `number` variable is used to label each dot, starting from 1.
+- The `for` loop iterates through each dot in the `dots` list.
+- Inside the loop, `screen.draw.text()` is used to display the dot's number label just below the dot's position.
+- Finally, `dot.draw()` is called to draw the dot on the screen.
+
+This code will ensure that the dots and their corresponding number labels are displayed on the screen as expected.
 
 
 
