@@ -142,6 +142,48 @@ Explanation:
 
 With this addition, clicking on the dots should draw lines between them as you progress through the dots in the correct order. If you click on the wrong dot or exceed the expected order, the lines are cleared, and you start over.
 
+You can add the code to make the dots respond to mouse clicks under the `on_mouse_down(pos)` function as follows:
+
+```python
+def on_mouse_down(pos):
+    global next_dot
+    global lines
+
+    if next_dot < len(dots):
+        if dots[next_dot].collidepoint(pos):
+            if next_dot > 0:
+                lines.append([dots[next_dot - 1].pos, dots[next_dot].pos])
+            next_dot += 1
+        else:
+            lines.clear()
+            next_dot = 0
+
+# Rest of your code...
+```
+
+With this code in place, when you click on a dot in the correct order, it will draw lines connecting the dots. If you click on the wrong dot or go out of order, the lines will be cleared, and you'll need to start over.
+
+It appears that you've provided additional instructions for implementing the code to make the dots respond to mouse clicks. However, the code I previously provided should already achieve this functionality. Here's the code again for reference:
+
+```python
+def on_mouse_down(pos):
+    global next_dot
+    global lines
+
+    if next_dot < len(dots):
+        if dots[next_dot].collidepoint(pos):
+            if next_dot > 0:
+                lines.append([dots[next_dot - 1].pos, dots[next_dot].pos])
+            next_dot += 1
+        else:
+            lines.clear()
+            next_dot = 0
+
+# Rest of your code...
+```
+
+This code ensures that the dots respond to mouse clicks in the correct order, and lines are drawn between them. If the player clicks on the wrong dot or goes out of order, the lines are cleared, and they start over. If you have any specific issues or questions about this code, please let me know, and I'll be happy to assist further.
+
 
 
 
