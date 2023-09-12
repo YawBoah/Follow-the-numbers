@@ -20,6 +20,19 @@ python
 Copy code
 from random import randint
 With these steps completed, your game project should be well-organized, and you'll be able to use the "dot.png" image as needed in your game.
+To set the screen size for your game, you can define the `WIDTH` and `HEIGHT` variables at the top of your Python code (numbers.py). Here's how you can do it:
+
+```python
+from random import randint
+
+# Set the screen size
+WIDTH = 400
+HEIGHT = 400
+
+# Rest of your code...
+```
+
+By declaring `WIDTH` and `HEIGHT` as global variables and assigning the desired pixel dimensions, you are specifying the screen size for your game as 400x400 pixels. You can adjust these values to your preferred screen size as needed for your game.
 To set up the Actors for your game, which are the dots, and create them in a loop, you can follow the instructions and add the code as described below. Place this code under the previous steps in your "numbers.py" file:
 
 ```python
