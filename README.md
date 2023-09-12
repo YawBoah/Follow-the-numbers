@@ -75,6 +75,18 @@ In this code:
 
 This code will ensure that the dots and their corresponding number labels are displayed on the screen as expected.
 
+To draw the lines between the dots, you can add the following code at the end of your existing `draw()` function:
+
+```python
+    number += 1
+    for line in lines:
+        screen.draw.line((100, 0, 0), line[0], line[1])
+```
+
+Make sure to add this code below the existing code in your `draw()` function. This code iterates through the `lines` list and draws lines connecting the dots based on the coordinates stored in the list.
+
+With this addition, your game will draw lines between the dots when they are connected, enhancing the gameplay experience.
+
 
 
 
