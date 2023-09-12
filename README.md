@@ -87,6 +87,30 @@ Make sure to add this code below the existing code in your `draw()` function. Th
 
 With this addition, your game will draw lines between the dots when they are connected, enhancing the gameplay experience.
 
+Indeed, to run your Python program from the command line, follow these steps:
+
+1. Open the Command Prompt (Windows) or Terminal (macOS/Linux).
+
+2. Navigate to the directory where your Python script "numbers.py" is located. You can use the `cd` command to change directories. For example:
+
+   ```bash
+   cd path/to/your/directory
+   ```
+
+3. Once you're in the correct directory, you can run your Python script using the `pgzrun` command followed by the script name:
+
+   ```bash
+   pgzrun numbers.py
+   ```
+
+4. Press Enter to execute the command. Your game should start, and you'll see the game window appear.
+
+Now, you can test your game by interacting with it and checking if everything is functioning as expected. If you encounter any issues or have questions during the testing, feel free to ask for assistance.
+
+It seems you've reached a point where you should run your program to see the results. If you encounter any issues or errors, make sure to carefully review your code for any mistakes or typos.
+
+If you encounter specific errors or issues while running the program, please provide more details, and I'll be happy to assist you in troubleshooting and resolving them.
+
 
 
 
